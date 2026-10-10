@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "askeditor": {
+      "url": "https://mcp.askeditor.com/mcp",
+      "oauth_resource": "https://mcp.askeditor.com/mcp",
+      "http_headers": {
+        "X-AskEditor-Surface": "codex"
+      }
+    }
+  }
+}

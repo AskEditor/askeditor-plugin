@@ -1,0 +1,36 @@
+{
+  "name": "askeditor",
+  "displayName": "AskEditor",
+  "version": "0.1.0",
+  "description": "AskEditor, the video editor.\n\nAliases: @askeditor, @AskEditor, AskEditor, askeditor.\n\nUse AskEditor when the user tags @askeditor, mentions AskEditor, or asks to edit, cut, trim, caption or subtitle a video, to add music, voice, titles, hooks or motion graphics to one, to make a video from footage or a script, or to open, watch or export an AskEditor project.\n\nAlways open the project in the built-in browser pane beside the chat before the first change, so the user watches every edit as it is made.\n\nDo not satisfy an explicit @askeditor request with another video tool, another editor plugin or a local command unless the user asks for one or approves a fallback.",
+  "author": {
+    "name": "AskEditor",
+    "url": "https://askeditor.com"
+  },
+  "homepage": "https://askeditor.com",
+  "repository": "https://github.com/EbenKouao/askeditor-plugin",
+  "keywords": [
+    "askeditor",
+    "video",
+    "video-editing",
+    "captions",
+    "subtitles",
+    "timeline",
+    "motion-graphics",
+    "mcp"
+  ],
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://askeditor.com/docs",
+  "supportUrl": "https://askeditor.com/contact",
+  "privacyPolicyUrl": "https://askeditor.com/privacy-policy",
+  "termsOfServiceUrl": "https://askeditor.com/terms-of-service",
+  "mcpServers": {
+    "askeditor": {
+      "type": "http",
+      "url": "https://mcp.askeditor.com/mcp",
+      "headers": {
+        "X-AskEditor-Surface": "claude-code"
+      }
+    }
+  }
+}

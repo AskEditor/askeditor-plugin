@@ -1,0 +1,20 @@
+{
+  "name": "askeditor",
+  "interface": {
+    "displayName": "AskEditor"
+  },
+  "plugins": [
+    {
+      "name": "askeditor",
+      "source": {
+        "source": "local",
+        "path": "./codex"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creativity"
+    }
+  ]
+}

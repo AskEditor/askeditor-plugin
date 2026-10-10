@@ -1,0 +1,16 @@
+{
+  "name": "askeditor",
+  "description": "AskEditor for Claude: edit and make videos with the editor open beside the chat.",
+  "owner": {
+    "name": "AskEditor",
+    "url": "https://askeditor.com"
+  },
+  "plugins": [
+    {
+      "name": "askeditor",
+      "source": "./claude",
+      "description": "Edit and make videos in AskEditor, with the editor open beside the chat.",
+      "category": "productivity"
+    }
+  ]
+}
