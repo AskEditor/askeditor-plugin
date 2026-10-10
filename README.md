@@ -19,7 +19,7 @@ first.
 Open **Plugins**, search for **AskEditor** and install it, then sign in when asked. From a terminal:
 
 ```
-codex plugin marketplace add <this repository's address>
+codex plugin marketplace add https://github.com/EbenKouao/askeditor-plugin.git
 codex plugin add askeditor@askeditor
 codex mcp login askeditor
 ```
@@ -31,7 +31,7 @@ Start a new task and say: *Open my latest AskEditor project beside this chat.*
 In the Code tab, press **+**, choose **Plugins**, and install **AskEditor**. From a terminal:
 
 ```
-claude plugin marketplace add <this repository's address>
+claude plugin marketplace add https://github.com/EbenKouao/askeditor-plugin.git
 claude plugin install askeditor@askeditor
 claude mcp login plugin:askeditor:askeditor
 ```
