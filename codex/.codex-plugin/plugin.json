@@ -1,6 +1,6 @@
 {
   "name": "askeditor",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "AskEditor, the video editor.\n\nAliases: @askeditor, @AskEditor, AskEditor, askeditor.\n\nUse AskEditor when the user tags @askeditor, mentions AskEditor, or asks to edit, cut, trim, caption or subtitle a video, to add music, voice, titles, hooks or motion graphics to one, to make a video from footage or a script, or to open, watch or export an AskEditor project.\n\nAlways open the project in the in-app browser beside the chat before the first change, so the user watches every edit as it is made.\n\nDo not satisfy an explicit @askeditor request with another video tool, another editor plugin or a local command unless the user asks for one or approves a fallback.",
   "author": {
     "name": "AskEditor",

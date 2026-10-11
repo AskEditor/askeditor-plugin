@@ -45,14 +45,47 @@ After each change that can be seen, look at it with `watch_edit`, which returns 
 
 Do the work yourself with the tools. Call `ask_askeditor` only when the person asks for AskEditor's own agent: it is billed as a chat turn on their AskEditor account.
 
-## 4. What costs, and what cannot be undone
+## 4. Free by default, Premium by the person's choice
+
+AskEditor is free to edit with. Everything on the timeline, text, motion graphics, styling and importing captions, bringing media in, looking at the edit and exporting use no credits. Reading what a clip says with its times (`get_clip_transcript`, which is how you know where to cut), removing pauses, cutting a person out of the background, and the effects and hooks that use that cut-out are free too, up to an amount each day: when a tool answers that today's free amount is used, say so plainly and do not retry it that day. Tools that generate (pictures, video, voices, music, captions written by AskEditor's own transcriber) or that run AskEditor's own agent are Premium: they spend the person's AskEditor credits, and they work only once the person has turned on Premium tools in AskEditor.
+
+`open_project` says which it is (`account.premium_tools`) and how many credits there are. It also says where the workspace's files live (`account.files`). `computer` is the Free plan: the person adds files in the editor, where they stay on their own computer, and exports there with Export; bringing a file in yourself (`create_upload`, `import_media_from_url`) and `export_video` answer that it is not in the person's plan. Say that plainly and offer the free way first. The answer also gives an address where the person chooses a plan. Give it to them as a link they can press: it opens in their own browser, where they pay. Never open it in the pane or in a tab of your own, and never choose a plan or pay for them. When they say they have a plan, call the tool again with the same arguments. `askeditor` is a paid plan: you can bring files in and export as usual. When a tool answers that it is a Premium tool and Premium tools are off:
+
+- Do not retry it, and do not look for another way to make AskEditor do the same thing.
+- Tell the person in plain words what needs Premium, and give them the address the answer names. Turning it on is theirs to do; never say they must buy credits in order to edit.
+- Offer the free way: make it with a tool this app already has (a voice, a picture, music), then bring it in with `import_media_from_url` or `create_upload`. For captions, read the words with `get_clip_transcript` and put them on with `import_captions`.
+
+While Premium tools are off, do not render a motion graphic: the editor shows it live and the export draws it.
+
+## 5. What costs, and what cannot be undone
 
 A call that spends more than a few credits, or deletes something, waits for the person. If this app shows them a dialog, wait for their answer. If the tool answers `needs_approval`, tell the person what it is and what it costs, and ask them to approve it in AskEditor in their own browser, with the link in that answer: the pane beside this chat cannot approve. Then call the tool again with the `approval_id`. If they decline, stop.
 
+If a tool answers `waiting_for_credits`, nothing ran and nothing was charged: the person's AskEditor balance cannot cover it. Tell them in one plain sentence how many more credits it needs and where to add them (the answer says where: the Add credits button in the editor they have open, or the address it gives), then call `wait_for_credits` with the `hold_id`. It returns when the credits are there, within ten minutes; then call the tool again with the same arguments. If it returns `covered: false`, say so and stop. Never name a tool to the person, and never say they must buy credits to edit: everything on the timeline is free.
+
 Never call `export_video` unless the person asks for the finished file.
 
-## 5. Files from this computer
+## 6. Files from this computer
 
 To bring in footage, pictures or audio from the person's machine: `create_upload`, send each part with the command it gives, then `complete_upload`, which can place the file on the timeline. From a web address: `import_media_from_url`.
+
+### Where the person's files are kept
+
+The editor has two places for the files a person adds, and the button beside Export says which one is in use. Use the same two names when you talk about it, never "local mode" or "the server":
+
+- **This computer**, the default on every plan and the only one on the Free plan. Nothing is uploaded: the files stay in that browser and the film is exported there.
+- **AskEditor cloud**, on paid plans. It lets the person open the project on any computer or phone, lets you watch, transcribe and cut out their footage, keeps the files safe if the browser's data is cleared, and gives them share links, reels and scheduled posts.
+
+The project and its timeline are always saved on AskEditor whichever place is chosen, which is why you can edit either kind of clip. When the person asks what the choice means, or a tool is refused because a file is only on their computer, say it in those words, and tell them the button beside Export opens a panel that shows both places.
+
+### A file that is only on the person's computer
+
+A file added while the place is This computer is never uploaded. Such a clip is on the timeline like any other, and you can cut, move, trim, style and caption it. What you cannot do is see or hear it: a tool that must read the file answers that it is only on the person's computer.
+
+- Do not retry it, and do not try another tool to read the same file.
+- Tell the person in plain words, and ask them what is in the footage if you need to know.
+- `watch_edit` still shows the text, graphics and captions, and says which footage is missing from its pictures.
+- Such a film is exported in the editor on that computer: the person presses Export there. `export_video` will refuse it.
+- A file you bring in yourself (`create_upload`, `import_media_from_url`) is uploaded as always. Say so first if the person has told you they want nothing uploaded.
 
 <!-- Generated. Edit skill/ and run scripts/agent-plugin/build.mjs. -->
