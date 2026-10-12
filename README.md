@@ -17,12 +17,12 @@ first.
 ## Install in Claude
 
 In the Claude desktop app, open **Customize**, then **Plugins**. Press **Add**, choose **Add from a
-repository**, enter `EbenKouao/askeditor-plugin` and press **Sync**. Then install **AskEditor**.
+repository**, enter `AskEditor/askeditor-plugin` and press **Sync**. Then install **AskEditor**.
 
 From a terminal instead:
 
 ```
-claude plugin marketplace add https://github.com/EbenKouao/askeditor-plugin.git
+claude plugin marketplace add https://github.com/AskEditor/askeditor-plugin.git
 claude plugin install askeditor@askeditor
 ```
 
@@ -35,7 +35,7 @@ Then say: *Open my latest AskEditor project beside this chat.*
 From a terminal:
 
 ```
-codex plugin marketplace add https://github.com/EbenKouao/askeditor-plugin.git
+codex plugin marketplace add https://github.com/AskEditor/askeditor-plugin.git
 codex plugin add askeditor@askeditor
 codex mcp login askeditor
 ```
